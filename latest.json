@@ -1,0 +1,22 @@
+{
+ "version": "0.1.28",
+ "date": "2026-11-23",
+ "notes": [
+  "Fixes the \"EBUSY ... fabric-carpet\" stop for real.** The cause: a stopped test leaves its game server (java) running on Windows, which keeps holding the helper jars, the world and the test port, so the next layer cannot replace them. Now every test run first ends any leftover java started from that mod's folder and anything still on the test port, ends the whole process tree on timeouts, and cleans up again when the server finishes. Copying helper jars retries and, if Windows still will not let go, the scenario carries on without the bot (the compatibility check is skipped) instead of stopping the mod."
+ ],
+ "engine": {
+  "url": "https://raw.githubusercontent.com/Uipg9/forge-releases/main/downloads/forge-update-0.1.28.zip",
+  "sha256": "31f508502c488c449b15434329b2ce74486dc439886cf2029eacb53786a123b4",
+  "size": 2568194
+ },
+ "windows": {
+  "url": "https://raw.githubusercontent.com/Uipg9/forge-releases/main/downloads/Forge-Windows.zip"
+ },
+ "android": {
+  "version": "0.1.28",
+  "url": "https://raw.githubusercontent.com/Uipg9/forge-releases/main/downloads/Forge.apk",
+  "notes": [
+   "Fixes the \"EBUSY ... fabric-carpet\" stop for real.** The cause: a stopped test leaves its game server (java) running on Windows, which keeps holding the helper jars, the world and the test port, so the next layer cannot replace them. Now every test run first ends any leftover java started from that mod's folder and anything still on the test port, ends the whole process tree on timeouts, and cleans up again when the server finishes. Copying helper jars retries and, if Windows still will not let go, the scenario carries on without the bot (the compatibility check is skipped) instead of stopping the mod."
+  ]
+ }
+}
